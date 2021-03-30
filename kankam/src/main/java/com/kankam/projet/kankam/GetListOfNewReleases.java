@@ -29,16 +29,10 @@ public class GetListOfNewReleases {
 
 	    public static Paging<AlbumSimplified> getListOfNewReleases_Sync() throws ParseException, org.apache.hc.core5.http.ParseException {
 	        try {
-	        	
-	        	
 	                return   getListOfNewReleasesRequest.execute();
-	            
-	            
 	        } catch (IOException | SpotifyWebApiException e) {
 	            System.out.println("Error: " + e.getMessage());
-	            
 	        }
-	       
 	        return null;
 	       
 	    }

@@ -21,19 +21,19 @@ public class GetListOfFeaturedPlaylistsExample {
   private static final GetListOfFeaturedPlaylistsRequest getListOfFeaturedPlaylistsRequest = spotifyApi
     .getListOfFeaturedPlaylists()
 //          .country(CountryCode.SE)
-//          .limit(10)
+            .limit(10)
 //          .offset(0)
 //          .timestamp(new Date(1414054800000L))
     .build();
 
-  public static void getListOfFeaturedPlaylists_Sync() {
+  public static FeaturedPlaylists getListOfFeaturedPlaylists_Sync() {
     try {
-      final FeaturedPlaylists featuredPlaylists = getListOfFeaturedPlaylistsRequest.execute();
+      return getListOfFeaturedPlaylistsRequest.execute();
 
-      System.out.println("Message: " + featuredPlaylists.getMessage());
     } catch (IOException | SpotifyWebApiException | ParseException e) {
       System.out.println("Error: " + e.getMessage());
     }
+    return null;
   }
 
   public static void getListOfFeaturedPlaylists_Async() {
